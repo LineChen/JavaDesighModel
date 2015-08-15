@@ -1,0 +1,111 @@
+package com.adapter_model;
+
+abstract class Player {
+	String name;
+
+	public Player(String name) {
+		this.name = name;
+	}
+
+	public abstract void attack();
+
+	public abstract void defence();
+}
+
+class Forwards extends Player {
+
+	public Forwards(String name) {
+		super(name);
+	}
+
+	@Override
+	public void attack() {
+		System.out.println("«∞∑Ê £∫" + name + " Ω¯π•");
+	}
+
+	@Override
+	public void defence() {
+		System.out.println("«∞∑Ê £∫" + name + " ∑¿ ÿ");
+	}
+
+}
+
+class Center extends Player {
+
+	public Center(String name) {
+		super(name);
+	}
+
+	@Override
+	public void attack() {
+		System.out.println("÷–∑Ê £∫" + name + " Ω¯π•");
+	}
+
+	@Override
+	public void defence() {
+		System.out.println("÷–∑Ê £∫" + name + " ∑¿ ÿ");
+	}
+
+}
+
+
+class ForeignForward{
+	private String name;
+	
+	
+//	public ForeignForward(String name){
+//		this.name = name;
+//	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void Ω¯π•(){
+		System.out.println("Õ‚ºÆ÷–∑Ê£∫" + name + " Ω¯π•");
+	}
+	
+	public void ∑¿ ÿ(){
+		System.out.println("Õ‚ºÆ÷–∑Ê£∫" + name + " ∑¿ ÿ");
+	}
+}
+
+class Translator extends Player{
+	ForeignForward foreignForward = new ForeignForward();
+
+	public Translator(String name) {
+		super(name);
+		foreignForward.setName(name);
+	}
+
+	@Override
+	public void attack() {
+		if(foreignForward != null){
+			foreignForward.Ω¯π•();
+		}
+	}
+
+	@Override
+	public void defence() {
+		if(foreignForward != null){
+			foreignForward.∑¿ ÿ();
+		}
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
